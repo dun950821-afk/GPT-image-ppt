@@ -1,10 +1,10 @@
 ---
-name: codeximage-to-editable-ppt-v2-1
+name: gpt-image-ppt
 description: >-
   Rebuild image-based PPT/PPTX files and slide screenshots into source-faithful editable PowerPoint decks with mandatory delivery validation. Use when converting flattened raster slides into editable text, native PowerPoint structure, and independent semantic PNG assets; when OCR may be incomplete or unreliable; when crop ownership, transparency, visual fidelity, or duplicate-content risks require review; or when a final deck must fail closed unless text editability, native structure, crop integrity, review closure, and PowerPoint-rendered QA all pass. Use scripts/run_batches.py for repeated baseline processing and scripts/validate_delivery.py before final delivery.
 ---
 
-# CodexImage to Editable PPT v2.1
+# GPT Image PPT
 
 ## Purpose
 

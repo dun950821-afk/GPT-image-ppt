@@ -1,4 +1,0 @@
-interface:
-  display_name: "CodexImage to Editable PPT v2.1"
-  short_description: "Rebuild raster slides with strict editable-deck QA"
-  default_prompt: "Use $codeximage-to-editable-ppt-v2-1 to rebuild raster slides into a source-faithful editable PowerPoint deck and pass the mandatory delivery gates."

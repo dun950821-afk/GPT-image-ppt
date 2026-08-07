@@ -1,4 +1,4 @@
-# codeximage-to-editable-ppt-v2-1
+# gpt-image-ppt
 
 这是一个 Codex 技能，用于将基于图片的 PowerPoint 演示文稿和幻灯片截图，重建为忠实还原原稿、可编辑的 PPTX 文件，并通过“验证不通过则禁止交付”的质量校验机制保障交付质量。
 
@@ -82,10 +82,10 @@
 Codex 技能的实际文件位于：
 
 ```text
-skills/codeximage-to-editable-ppt-v2-1
+skills/gpt-image-ppt
 ```
 
-本技能与 `codeximage-to-editable-ppt-v1` 相互独立。安装本技能不会修改或替换 v1 技能。
+本技能作为独立项目安装，不会修改或替换其他 PowerPoint 重建技能。
 
 ## 安装为 Codex 技能
 
@@ -93,25 +93,25 @@ skills/codeximage-to-editable-ppt-v2-1
 
 ```bash
 python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo wiltonesten-web/codeximage-to-editable-ppt-v2-1 \
-  --path skills/codeximage-to-editable-ppt-v2-1
+  --repo dun950821-afk/gpt-image-ppt \
+  --path skills/gpt-image-ppt
 ```
 
 PowerShell：
 
 ```powershell
 python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
-  --repo wiltonesten-web/codeximage-to-editable-ppt-v2-1 `
-  --path skills/codeximage-to-editable-ppt-v2-1
+  --repo dun950821-afk/gpt-image-ppt `
+  --path skills/gpt-image-ppt
 ```
 
 安装完成后的目录应为：
 
 ```text
-%USERPROFILE%\.codex\skills\codeximage-to-editable-ppt-v2-1
+%USERPROFILE%\.codex\skills\gpt-image-ppt
 ```
 
-如需手动安装，只需将 `skills/codeximage-to-editable-ppt-v2-1` 文件夹复制到 Codex 技能目录，不要将整个仓库根目录作为技能文件夹复制。
+如需手动安装，只需将 `skills/gpt-image-ppt` 文件夹复制到 Codex 技能目录，不要将整个仓库根目录作为技能文件夹复制。
 
 安装完成后重启 Codex，使其重新发现并加载该技能。
 
@@ -120,7 +120,7 @@ python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-s
 在仓库根目录执行以下命令安装 Python 软件包：
 
 ```bash
-pip install -r skills/codeximage-to-editable-ppt-v2-1/requirements.txt
+pip install -r skills/gpt-image-ppt/requirements.txt
 ```
 
 按实际使用场景安装以下系统依赖：
@@ -148,7 +148,7 @@ sudo apt-get install -y \
 执行自动化基线拆分：
 
 ```bash
-python skills/codeximage-to-editable-ppt-v2-1/scripts/decompose_visual_elements.py \
+python skills/gpt-image-ppt/scripts/decompose_visual_elements.py \
   input.pptx \
   --outdir baseline_output \
   --dpi 300 \
@@ -164,9 +164,9 @@ python skills/codeximage-to-editable-ppt-v2-1/scripts/decompose_visual_elements.
 使用示例配置执行：
 
 ```bash
-python skills/codeximage-to-editable-ppt-v2-1/scripts/decompose_visual_elements.py \
+python skills/gpt-image-ppt/scripts/decompose_visual_elements.py \
   input.pptx \
-  --config skills/codeximage-to-editable-ppt-v2-1/config.example.yaml \
+  --config skills/gpt-image-ppt/config.example.yaml \
   --outdir baseline_output
 ```
 
@@ -177,7 +177,7 @@ python skills/codeximage-to-editable-ppt-v2-1/scripts/decompose_visual_elements.
 在 Codex 中使用类似以下提示词调用技能：
 
 ```text
-使用 $codeximage-to-editable-ppt-v2-1 将 input.pptx 重建为忠实还原原稿的
+使用 $gpt-image-ppt 将 input.pptx 重建为忠实还原原稿的
 可编辑 PowerPoint，并通过所有强制性交付校验。
 ```
 
@@ -197,7 +197,7 @@ python skills/codeximage-to-editable-ppt-v2-1/scripts/decompose_visual_elements.
 交付前，对精细化输出执行以下校验：
 
 ```bash
-python skills/codeximage-to-editable-ppt-v2-1/scripts/validate_delivery.py \
+python skills/gpt-image-ppt/scripts/validate_delivery.py \
   refined_output \
   --pptx presentation_refined_editable.pptx
 ```
@@ -220,7 +220,7 @@ python skills/codeximage-to-editable-ppt-v2-1/scripts/validate_delivery.py \
 以可复现的批次方式重复执行基线拆分：
 
 ```bash
-python skills/codeximage-to-editable-ppt-v2-1/scripts/run_batches.py \
+python skills/gpt-image-ppt/scripts/run_batches.py \
   input_folder \
   --outdir batch_output \
   --recursive \

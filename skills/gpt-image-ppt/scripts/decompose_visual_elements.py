@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""codeximage-to-editable-ppt-v2-1
+"""gpt-image-ppt
 
 High-fidelity baseline utility for image-based PPT/PPTX and slide screenshots.
 It extracts or renders raster slide pages, decomposes them into independent PNG

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run deterministic parallel baseline batches for codeximage-to-editable-ppt-v2-1.
+"""Run deterministic parallel baseline batches for gpt-image-ppt.
 
 This wrapper prevents batch processing from depending on conversation memory.
 By default it groups inputs two at a time, writes one fixed batch_instruction.md
